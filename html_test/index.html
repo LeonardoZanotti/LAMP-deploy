@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Lâmpada 3</title>
+	<meta charset="UTF-8"/>
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+	<h1>Put the mouse on the image</h1>
+	<img src="./img/mar.jpg" id="luz" onmouseover="mudaLampada()" />			<!-- Insere uma imagem de uma lampada apagada, atribui-se o id "luz" a ela, e ao passar o mouse por cima (onmouseover)(OBS: aqui poderia ser utilizado o código onmousemove, entretanto, este não funciona no google chrome) executa a função mudaLampada(tipo == 'lampada-acesa'), ao tirar o mouse de cima (onmouseout) executa a função mudaLampada(tipo == 'lampada-apagada') e ao clicar na imagem (onclick) executa a função mudaLampada(tipo == 'lampada-quebrada') (note que o parâmetro está entre aspas simples devido a já existência de aspas duplas no código) -->
+</body>
+</html>
