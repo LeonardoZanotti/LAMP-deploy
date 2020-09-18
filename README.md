@@ -106,13 +106,13 @@ Inside html_test.conf we will do the host configuration, and the final file will
 ```bash
 <VirtualHost *:80>
 	
-        ServerName www.htmltestzanotti.com
-	ServerAlias htmltestzanotti.com
-	ServerAdmin webmaster@localhost
-	DocumentRoot /var/www/html/html_test
+    ServerName www.htmltestzanotti.com
+    ServerAlias htmltestzanotti.com
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/html/html_test
 
-	ErrorLog ${APACHE_LOG_DIR}/error.log
-	CustomLog ${APACHE_LOG_DIR}/access.log combined
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
 
 </VirtualHost>
 ```
