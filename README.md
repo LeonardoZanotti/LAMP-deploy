@@ -5,7 +5,7 @@ Relatório que explica como realizar o deploy de um projeto utilizando LAMP <br 
 How to do project deploy with apache LAMP
 
 ## Requirements
-Im using just Apache 2.4.29. In distros from Debian it can be installed with:
+Im using only Apache 2.4.29. In distros from Debian it can be installed with:
 ```bash
 $ sudo apt update
 $ sudo apt install apache2
@@ -20,7 +20,7 @@ $ git clone https://github.com/LeonardoZanotti/LAMP-deploy.git
 ```
 
 ## Creating the virtual host
-First of all, drop the project folder inside **/var/www/html** (you will need root acess) and garant some permissions to the project fodler
+First of all, drop the project folder inside **/var/www/html** (you will need root acess) and garant some permissions to the project folder
 ```bash
 # Moving the project inside the folder
 $ sudo mv /home/user/path/to/project /var/www/html
@@ -32,7 +32,6 @@ $ sudo chmod 755 /var/www/html/html_test
 Now, go to /etc/apache2
 ```bash
 $ cd /etc/apache2
-$ ls
 ```
 
 In this folder whe have the following
@@ -87,7 +86,6 @@ The file should stay like this
 Now, lets do the final configuration in **sites-available** folder
 ```bash
 $ cd sites-available/
-ls
 ```
 
 Here we have
