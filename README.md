@@ -1,8 +1,8 @@
 <img src="https://miro.medium.com/max/4096/1*6rDcIgFJQldloIERiUSmzw.png" alt="Apache symbol">
 
 # LAMP-deploy
-Relatório que explica como realizar o deploy de um projeto utilizando LAMP <br />
-How to do project deploy with apache LAMP
+Relatório que explica como realizar o deploy de um projeto utilizando LAMP. <br />
+How to do project deploy with apache LAMP.
 
 ## Requirements
 Im using only Apache 2.4.29. In distros from Debian it can be installed with:
@@ -14,13 +14,13 @@ If you have some problem installing Apache you can visit the [oficial page](http
 
 ## Other requirements
 To host a project you obviously need some project. For trainning you can use the `html_test` project in this repository. It was just a random sample with html + css + js.
-To get it you can just download this repo or clone it with
+To get it you can just download this repo or clone it with:
 ```bash
 $ git clone https://github.com/LeonardoZanotti/LAMP-deploy.git
 ```
 
 ## Creating the virtual host
-First of all, drop the project folder inside **/var/www/html** (you will need root acess) and garant some permissions to the project folder
+First of all, drop the project folder inside **/var/www/html** (you will need root acess) and garant some permissions to the project folder:
 ```bash
 # Moving the project inside the folder
 $ sudo mv /home/user/path/to/project /var/www/html
@@ -29,12 +29,12 @@ $ sudo mv /home/user/path/to/project /var/www/html
 $ sudo chmod 755 /var/www/html/html_test
 ```
 
-Now, go to /etc/apache2
+Now, go to /etc/apache2:
 ```bash
 $ cd /etc/apache2
 ```
 
-In this folder whe have the following
+In this folder whe have the following:
 ```bash
 apache2.conf    conf-enabled  magic           mods-enabled  sites-available
 conf-available  envvars       mods-available  ports.conf    sites-enabled
@@ -50,7 +50,7 @@ Lets do some configuration in apache2.conf:
 $ sudo nano apache2.conf
 ```
 
-The file should stay like this
+The file should stay like this:
 ```bash
 
 #
@@ -81,19 +81,19 @@ The file should stay like this
 #
 ```
 
-**Ctrl + S** to save and **Ctrl + X** to exit the file
+**Ctrl + S** to save and **Ctrl + X** to exit the file.
 
-Now, lets do the final configuration in **sites-available** folder
+Now, lets do the final configuration in **sites-available** folder:
 ```bash
 $ cd sites-available/
 ```
 
-Here we have
+Here we have:
 ```bash
 000-default.conf  default-ssl.conf
 ```
 
-We will make a copy of the default conf file to create our virtual host
+We will make a copy of the default conf file to create our virtual host:
 ```bash
 # Create a copy of the default file
 $ sudo cp 000-default.conf html_test.conf
@@ -102,7 +102,7 @@ $ sudo cp 000-default.conf html_test.conf
 $ sudo nano html_test.conf
 ```
 
-Inside html_test.conf we will do the host configuration, and the final file will look like this
+Inside html_test.conf we will do the host configuration, and the final file will look like this:
 ```bash
 <VirtualHost *:80>
 	
@@ -117,7 +117,7 @@ Inside html_test.conf we will do the host configuration, and the final file will
 </VirtualHost>
 ```
 
-Now, we are done with the folders and files configuration, just run the following to put the site online
+Now, we are done with the folders and files configuration, just run the following to put the site online:
 ```bash
 # Add the site to the sites-enabled folder
 $ sudo a2ensite html_test.conf
@@ -133,13 +133,12 @@ $ service apache2 reload    # Usually this works fine
 $ sudo a2dissite html_test.conf
 ```
 
-And its done, our project is hosted on `localhost`
+And its done, our project is hosted on `localhost`.
 
 ### Some considerations
 The html file should be named as **index.html**. If not, you should declare the main file in the DocumentRoot field inside the .conf file.
 
-If you want to access your virtual host through the ServerName or ServerAlias you should do the following.
-**Attention! Your ServerName and ServerAlias couln't exist (so be creative and invent some weird url =D)**
+If you want to access your virtual host through the ServerName or ServerAlias you should do the following:
 ```bash
 # Open the hosts manager file
 $ sudo nano /etc/hosts
@@ -147,8 +146,9 @@ $ sudo nano /etc/hosts
 # Add this line
 127.0.0.1   www.htmltestzanotti.com
 ```
+**Attention! Your ServerName and ServerAlias couln't exist (so be creative and invent some weird url =D).**
 
-**Ctrl + S** to save and **Ctrl + X** to exit the file
+**Ctrl + S** to save and **Ctrl + X** to exit the file.
 
 Now you can access **www.htmltestzanotti.com** or **htmltestzanotti.com** or just locahost to see your project.
 
