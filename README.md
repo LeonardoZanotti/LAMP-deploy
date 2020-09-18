@@ -1,7 +1,7 @@
 <img src="https://miro.medium.com/max/4096/1*6rDcIgFJQldloIERiUSmzw.png" alt="Apache symbol">
 
 # LAMP-deploy
-Relatório que explica como realizar o deploy de um projeto utilizando LAMP
+Relatório que explica como realizar o deploy de um projeto utilizando LAMP <br />
 How to do project deploy with apache LAMP
 
 ## Requirements
